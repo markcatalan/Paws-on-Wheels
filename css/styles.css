@@ -20,7 +20,7 @@ body {
   font-family: "Poppins", sans-serif;
   font-weight: 300;
   color: #444;
-  /* color: var(--color-primary-dark); */
+
   line-height: 1.9;
 }
 
@@ -31,7 +31,7 @@ body {
 }
 
 .section__title {
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin-bottom: 2.5rem;
   font-weight: 400;
   text-transform: uppercase;
@@ -61,7 +61,6 @@ body {
   display: flex;
   padding: 1.5rem 6rem;
   justify-content: space-between;
-  /* height: 9rem; */
 }
 
 .nav__logo {
@@ -201,7 +200,6 @@ body {
 /* How it works section */
 .hiw__section {
   text-align: center;
-  /* background-color: var(--color-primary-light); */
 }
 .hiw__section h1 {
   font-size: 5.5rem;
@@ -242,14 +240,10 @@ body {
 
 /* Why Choose Us Section */
 
-.wcu__section {
-  /* background-color: orange; */
-  /* width: 80%; */
-}
 .wcu__section--content {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  column-gap: 2rem;
+  column-gap: 3rem;
   width: 80%;
   justify-self: center;
 }
@@ -257,38 +251,36 @@ body {
 .wcu__section--details {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(35rem, 1fr));
-  gap: 1rem;
+  gap: 2.5rem;
+
+  padding: 5rem 0;
 }
 
 .wcu__section--detail {
   display: grid;
-  grid-template-columns: 7rem 1fr;
-
-  /* align-items: center; */
-
-  /* display: flex;
+  grid-template-columns: auto auto;
+  grid-template-rows: min-content min-content;
   align-items: center;
-  gap: 1rem; */
+
+  gap: 1.5rem;
 }
 
 .wcu__icon {
   width: 3rem;
   height: 3rem;
-  color: red;
+  color: var(--color-primary);
 }
 
-.wcu__section--detail-title {
-  font-size: 3rem;
+.wcu__section--detail h5 {
+  font-size: 2rem;
   font-weight: 500;
-  /* color: red; */
 }
 
-/* .wcu__section--detail-title {
-  color: red;
-} */
-
-.wcu__section--detail-desc {
+.wcu__section--detail p {
   grid-column: 2 / -1;
+
+  font-size: 1.5rem;
+  line-height: 1.7;
 }
 
 .wcu__section--img img {
