@@ -32,9 +32,10 @@ body {
 
 .section__title {
   font-size: 2rem;
-  margin-bottom: 2.5rem;
-  font-weight: 400;
+  margin-bottom: 5rem;
+  font-weight: 600;
   text-transform: uppercase;
+  text-align: center;
 }
 .btn {
   background-color: var(--color-primary);
