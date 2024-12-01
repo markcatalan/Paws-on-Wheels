@@ -393,3 +393,67 @@ body {
   right: 0;
   transform: translate(50%, -50%);
 }
+
+/* Pricing section */
+.pricing__section {
+  text-align: center;
+
+  border-top: 1px solid rgba(187, 178, 178, 0.473);
+}
+
+.section__header {
+  width: 80%;
+  margin: 0 auto 5rem auto;
+}
+
+.pricing__section h3 {
+  font-size: 4rem;
+  font-weight: 600;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.pricing {
+  width: 80%;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(50rem, 70rem));
+
+  gap: 2.5rem;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.package {
+  padding: 3.5rem 5rem;
+  border: 1px solid rgba(187, 178, 178, 0.473);
+}
+
+.package__title {
+  font-size: 2rem;
+}
+
+.package__services {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.package__price {
+  font-size: 5rem;
+  font-weight: 600;
+  width: 60%;
+  margin: 0 auto 3rem auto;
+
+  line-height: 1.2;
+
+  color: var(--color-primary-dark);
+  border-bottom: 1px solid var(--color-primary-dark);
+}
+
+.breeds {
+  font-size: 1.5rem;
+  width: 85%;
+  margin: 0 auto;
+}
