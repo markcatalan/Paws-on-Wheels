@@ -457,3 +457,30 @@ body {
   width: 85%;
   margin: 0 auto;
 }
+
+/* CTE section */
+.section__cte {
+  background-color: #444;
+}
+
+.cte {
+  width: 80%;
+  min-width: 50rem;
+  margin: 0 auto;
+  display: flex;
+  column-gap: 5rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.cte h3 {
+  font-size: 4rem;
+  color: #fff;
+}
+
+.cte button {
+  margin: 0;
+  font-family: inherit;
+  font-size: 2.5rem;
+}
