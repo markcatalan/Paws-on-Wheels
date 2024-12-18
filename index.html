@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="./css/styles.css" />
 
-    <link rel="icon" type="image/x-icon" href="./img/logo3.png" />
+    <link rel="icon" type="image/x-icon" href="./img/logo.png" />
     <title>Paws on Wheels</title>
   </head>
   <body>
@@ -22,20 +22,22 @@
 
         <ul class="nav__links">
           <li class="nav__item">
-            <a class="nav__link" href="#1"> How it works</a>
+            <a class="nav__link" href="#hiw"> How it works</a>
           </li>
 
           <li class="nav__item">
-            <a class="nav__link" href="#2">Services</a>
+            <a class="nav__link" href="#services">Services</a>
           </li>
 
           <li class="nav__item">
-            <a class="nav__link" href="#3"> Why choose us</a>
+            <a class="nav__link" href="#why-choose-us"> Why choose us</a>
           </li>
           <li class="nav__item">
-            <a class="nav__link" href="#4"> Testimonials</a>
+            <a class="nav__link" href="#testimonials"> Testimonials</a>
           </li>
-          <li class="nav__item"><a class="nav__link" href="#5"> Pricing</a></li>
+          <li class="nav__item">
+            <a class="nav__link" href="#pricing"> Pricing</a>
+          </li>
           <li class="btn nav__item--btn">
             <a class="nav__link" href="#6"> Groom now</a>
           </li>
@@ -52,7 +54,7 @@
       </div>
     </section>
 
-    <section class="section hiw__section">
+    <section class="section hiw__section" id="hiw">
       <h2 class="section__title">How it works</h2>
       <h1>You Book, We Groom, We Go!</h1>
       <div class="hiw__steps">
@@ -84,8 +86,9 @@
       </div>
     </section>
 
-    <section class="section services__section">
+    <section class="section services__section" id="services">
       <h2 class="section__title">What we offer</h2>
+      <h3>Bringing Out the Best in Your Pet</h3>
 
       <div class="services">
         <div class="service">
@@ -117,7 +120,7 @@
       </div>
     </section>
 
-    <section class="section wcu__section">
+    <section class="section wcu__section" id="why-choose-us">
       <h2 class="section__title">Why choose us</h2>
       <div class="wcu__section--content">
         <div class="wcu__section--details">
@@ -169,6 +172,205 @@
         </div>
       </div>
     </section>
+
+    <section class="section testimonial__section" id="testimonials">
+      <div class="section__container">
+        <h2 class="section__title">Testimonial</h2>
+        <h3>
+          Don't just take our word for it – see what our satisfied pet owners
+          have to say
+        </h3>
+      </div>
+
+      <div class="slider">
+        <div class="slide">
+          <div class="testimonial">
+            <h5 class="testimonial__header">
+              Finally, a grooming service I can trust!
+            </h5>
+            <blockquote class="testimonial__text">
+              I can't thank Paws on Wheels enough for the amazing grooming
+              service they provided to my dog, Max. He’s never looked better!
+              The team was so gentle and caring, and Max was comfortable
+              throughout the entire session. I’m always confident that he’s in
+              great hands with them. Highly recommend!
+            </blockquote>
+            <address class="testimonial__author">
+              <img
+                src="./img/services/bath.jpg"
+                alt=""
+                class="testimonial__photo"
+              />
+              <h6 class="testimonial__name">Miyah Miles</h6>
+              <h5 class="testimonial__location">London, UK</h5>
+            </address>
+          </div>
+        </div>
+
+        <div class="slide">
+          <div class="testimonial">
+            <h5 class="testimonial__header">
+              A Truly Stress-Free Grooming Experience!
+            </h5>
+            <blockquote class="testimonial__text">
+              I’ve been to several grooming salons before, but none compare to
+              the level of care and attention Paws on Wheels provides. My cat,
+              Bella, is usually very nervous around new people, but the team
+              made sure she felt calm and safe throughout the whole process.
+              They took the time to listen to my concerns and were incredibly
+              patient with her. Bella came out looking stunning, and I could
+              tell she felt so much better! It’s comforting to know she’s in
+              such good hands. I’m a loyal customer for life!
+            </blockquote>
+            <address class="testimonial__author">
+              <img src="" alt="" class="testimonial__photo" />
+              <h6 class="testimonial__name">Sophie Taylor</h6>
+              <h5 class="testimonial__location">Manchester, UK</h5>
+            </address>
+          </div>
+        </div>
+
+        <div class="slide">
+          <div class="testimonial">
+            <h5 class="testimonial__header">Exceptional Service and Care!</h5>
+            <blockquote class="testimonial__text">
+              Paws on Wheels has completely changed the grooming experience for
+              my dog, Charlie. He’s a bit of a handful, but the team was so
+              professional and handled him with such care and patience. They
+              made sure he was comfortable every step of the way and gave him a
+              fantastic grooming session. Charlie came out looking and smelling
+              great, and he was so happy! I’ve never been more impressed with a
+              grooming service. I highly recommend them to anyone looking for
+              top-notch care for their pets!
+            </blockquote>
+            <address class="testimonial__author">
+              <img
+                src="./img/services/bath.jpg"
+                alt=""
+                class="testimonial__photo"
+              />
+              <h6 class="testimonial__name">Miyah Miles</h6>
+              <h5 class="testimonial__location">London, UK</h5>
+            </address>
+          </div>
+        </div>
+        <button class="slider__btn slider__btn--left">&larr;</button>
+        <button class="slider__btn slider__btn--right">&rarr;</button>
+        <div class="dots"></div>
+      </div>
+    </section>
+
+    <section class="section pricing__section" id="pricing">
+      <div class="section__header">
+        <h2 class="section__title">Pricing</h2>
+        <h3>Choose the Perfect Grooming Package for Your Furry Friend</h3>
+      </div>
+
+      <div class="pricing">
+        <div class="package">
+          <p class="package__title">Basic Package</p>
+          <p class="package__services">(Bath & Brush)</p>
+          <h5 class="package__price">from $30.00</h5>
+
+          <p class="breeds">
+            $30.00 For small breeds - Pugs, yorkshire terriers, bichon frise
+            etc. $34.00 For medium breeds - Border collies, springer spaniel
+            etc. $38.00 For large breeds - Golden retrievers, Labradors etc.
+          </p>
+        </div>
+        <div class="package">
+          <p class="package__title">Standard Package</p>
+          <p class="package__services">(Bath, Brush & Ear Clean)</p>
+          <h5 class="package__price">from $40.00</h5>
+
+          <p class="breeds">
+            $40.00 For small breeds - Pugs, yorkshire terriers, bichon frise
+            etc. $44.00 For medium breeds - Border collies, springer spaniel
+            etc. $48.00 For large breeds - Golden retrievers, Labradors etc.
+          </p>
+        </div>
+        <div class="package">
+          <p class="package__title">Premium Package</p>
+          <p class="package__services">(Haircut, Bath, Brush & Ear Clean)</p>
+          <h5 class="package__price">from $50.00</h5>
+
+          <p class="breeds">
+            $50.00 For small breeds - Pugs, yorkshire terriers, bichon frise
+            etc. $54.00 For medium breeds - Border collies, springer spaniel
+            etc. $58.00 For large breeds - Golden retrievers, Labradors etc.
+          </p>
+        </div>
+        <div class="package">
+          <p class="package__title">Deluxe Package</p>
+          <p class="package__services">
+            (Haircut, Bath, Brush, Ear Clean & Nail Trim)
+          </p>
+          <h5 class="package__price">from $60.00</h5>
+
+          <p class="breeds">
+            $60.00 For small breeds - Pugs, yorkshire terriers, bichon frise
+            etc. $64.00 For medium breeds - Border collies, springer spaniel
+            etc. $68.00 For large breeds - Golden retrievers, Labradors etc.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section__cte">
+      <div class="cte">
+        <h3>Give Your Dog the Grooming They Deserve!</h3>
+        <button class="btn hero__btn">Schedule Appointment</button>
+      </div>
+    </section>
+
+    <footer class="section section__footer">
+      <div class="footer__socials">
+        <div class="line"></div>
+        <ul class="items">
+          <li class="item">
+            <a class="social__link" href="#facebook">
+              <ion-icon class="social__icon" name="logo-facebook"></ion-icon
+            ></a>
+          </li>
+          <li class="item">
+            <a class="social__link" href="#instagram">
+              <ion-icon class="social__icon" name="logo-instagram"></ion-icon
+            ></a>
+          </li>
+          <li class="item">
+            <a class="social__link" href="#youtube">
+              <ion-icon class="social__icon" name="logo-youtube"></ion-icon
+            ></a>
+          </li>
+          <li class="item">
+            <a class="social__link" href="#twitter">
+              <ion-icon class="social__icon" name="logo-twitter"></ion-icon
+            ></a>
+          </li>
+          <li class="item">
+            <a class="social__link" href="#linkedin">
+              <ion-icon class="social__icon" name="logo-linkedin"></ion-icon
+            ></a>
+          </li>
+          <li class="item">
+            <a class="social__link" href="#pinterest">
+              <ion-icon class="social__icon" name="logo-pinterest"></ion-icon
+            ></a>
+          </li>
+          <li class="item">
+            <a class="social__link" href="#tiktok">
+              <ion-icon class="social__icon" name="logo-tiktok"></ion-icon
+            ></a>
+          </li>
+        </ul>
+        <div class="line"></div>
+      </div>
+
+      <img class="footer__logo" src="./img/logo.png" alt="Logo" />
+
+      <p class="footer_copyright">Copyright &copy; 2024 PawsOnWheels</p>
+    </footer>
+
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
