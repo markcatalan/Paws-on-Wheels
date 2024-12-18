@@ -154,6 +154,14 @@ body {
   background-color: var(--color-primary-light);
 }
 
+.services__section h3 {
+  font-size: 4rem;
+  font-weight: 600;
+  width: 70%;
+  margin: 0 auto 5rem auto;
+  text-align: center;
+}
+
 .services {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
