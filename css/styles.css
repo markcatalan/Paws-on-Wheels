@@ -250,6 +250,14 @@ body {
 
 /* Why Choose Us Section */
 
+.wcu__section h3 {
+  font-size: 4rem;
+  font-weight: 600;
+  width: 70%;
+  margin: 0 auto 5rem auto;
+  text-align: center;
+}
+
 .wcu__section--content {
   display: grid;
   grid-template-columns: 2fr 1fr;
