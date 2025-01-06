@@ -154,6 +154,14 @@ body {
   background-color: var(--color-primary-light);
 }
 
+.services__section h3 {
+  font-size: 4rem;
+  font-weight: 600;
+  width: 70%;
+  margin: 0 auto 5rem auto;
+  text-align: center;
+}
+
 .services {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -241,6 +249,14 @@ body {
 }
 
 /* Why Choose Us Section */
+
+.wcu__section h3 {
+  font-size: 4rem;
+  font-weight: 600;
+  width: 70%;
+  margin: 0 auto 5rem auto;
+  text-align: center;
+}
 
 .wcu__section--content {
   display: grid;
@@ -392,4 +408,150 @@ body {
 .slider__btn--right {
   right: 0;
   transform: translate(50%, -50%);
+}
+
+/* Pricing section */
+.pricing__section {
+  text-align: center;
+
+  border-top: 1px solid rgba(187, 178, 178, 0.473);
+}
+
+.section__header {
+  width: 80%;
+  margin: 0 auto 5rem auto;
+}
+
+.pricing__section h3 {
+  font-size: 4rem;
+  font-weight: 600;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.pricing {
+  width: 80%;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(50rem, 70rem));
+
+  gap: 2.5rem;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.package {
+  padding: 3.5rem 5rem;
+  border: 1px solid rgba(187, 178, 178, 0.473);
+}
+
+.package__title {
+  font-size: 2rem;
+}
+
+.package__services {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.package__price {
+  font-size: 5rem;
+  font-weight: 600;
+  width: 60%;
+  margin: 0 auto 3rem auto;
+
+  line-height: 1.2;
+
+  color: var(--color-primary-dark);
+  border-bottom: 1px solid var(--color-primary-dark);
+}
+
+.breeds {
+  font-size: 1.5rem;
+  width: 85%;
+  margin: 0 auto;
+}
+
+/* CTE section */
+.section__cte {
+  background-color: #444;
+}
+
+.cte {
+  width: 80%;
+  min-width: 50rem;
+  margin: 0 auto;
+  display: flex;
+  column-gap: 5rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.cte h3 {
+  font-size: 4rem;
+  color: #fff;
+}
+
+.cte button {
+  margin: 0;
+  font-family: inherit;
+  font-size: 2.5rem;
+}
+
+/* Footer section */
+
+.section__footer {
+  background-color: #444;
+  border-top: 1px solid rgba(187, 178, 178, 0.473);
+}
+
+.footer__socials {
+  display: flex;
+  align-items: center;
+  gap: 6rem;
+  justify-content: space-evenly;
+  margin-bottom: 3rem;
+}
+
+.line {
+  width: 100%;
+  height: 0.5px;
+  background-color: whitesmoke;
+}
+
+.items {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+}
+
+.social__link {
+  display: block;
+  font-size: 5rem;
+  text-decoration: none;
+}
+
+.social__icon {
+  fill: whitesmoke;
+  font-size: 3rem;
+}
+
+.footer__logo {
+  width: 25rem;
+  display: block;
+  margin: 0 auto 3rem auto;
+
+  filter: invert(100%) sepia(99%) saturate(0%) hue-rotate(154deg)
+    brightness(104%) contrast(100%);
+}
+
+.footer_copyright {
+  color: whitesmoke;
+  text-align: center;
+  font-size: 1.5rem;
 }
