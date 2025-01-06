@@ -327,6 +327,8 @@ body {
   height: 50rem;
   margin: 0 auto;
   position: relative;
+
+  overflow: hidden;
 }
 
 .slide {
@@ -402,12 +404,13 @@ body {
 
 .slider__btn--left {
   left: 0;
-  transform: translate(-50%, -50%);
+  /* transform: translateY(-50%); */
+  transform: translate(0%, -50%);
 }
 
 .slider__btn--right {
   right: 0;
-  transform: translate(50%, -50%);
+  transform: translate(0%, -50%);
 }
 
 /* Pricing section */
