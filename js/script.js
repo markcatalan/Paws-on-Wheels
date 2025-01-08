@@ -20,6 +20,14 @@ const slides = document.querySelectorAll(".slide");
 const btnLeft = document.querySelector(".slider__btn--left");
 const btnRight = document.querySelector(".slider__btn--right");
 
+// Lazy Loading
+const imgTargets = document.querySelectorAll("img[data-src]");
+
+// Sticky Navbar
+const heroSect = document.querySelector("#section--hero");
+const header = document.querySelector(".header");
+const navHeight = header.getBoundingClientRect().height;
+
 // ---------------- IMPLEMENTATION --------------- //
 
 // Smooth Scroll
@@ -78,3 +86,35 @@ const prevSlide = function () {
 
 btnLeft.addEventListener("click", prevSlide);
 btnRight.addEventListener("click", nextSlide);
+
+// Lazy Loading
+const obsCallback = function (entries, observer) {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.remove("lazy-img");
+      // TO DO: use the path from data-src into the src of the img
+    }
+  });
+};
+const imgObserver = new IntersectionObserver(obsCallback, {
+  root: null,
+  threshold: 0.1,
+});
+
+imgTargets.forEach((img) => imgObserver.observe(img));
+
+// Sticky Navbar
+
+const sticky = function (entries, observer) {
+  const [entry] = entries;
+
+  if (entry.isIntersecting) header.classList.remove("sticky");
+  else header.classList.add("sticky");
+};
+const heroObserver = new IntersectionObserver(sticky, {
+  root: null,
+  threshold: 0,
+  rootMargin: `-${navHeight}px`,
+});
+
+heroObserver.observe(heroSect);

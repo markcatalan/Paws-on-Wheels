@@ -50,15 +50,8 @@ body {
   background-color: var(--color-primary-dark);
 }
 
-/* Header */
-/* .header {
-  height: 100vh;
-  background-image: url("../img/haircut.png");
-
-  background-size: cover;
-} */
-
 /* Navigation */
+
 .nav {
   display: flex;
   padding: 1.5rem 6rem;

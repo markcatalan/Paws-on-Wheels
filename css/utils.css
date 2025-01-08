@@ -1,0 +1,10 @@
+.lazy-img {
+  filter: blur(20px);
+}
+
+.sticky {
+  width: 100%;
+  z-index: 100;
+  background-color: #fff;
+  position: fixed;
+}
