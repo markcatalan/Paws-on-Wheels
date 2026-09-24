@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -20,7 +20,19 @@
       <nav class="nav">
         <img class="nav__logo" src="./img/logo.png" alt="Paws on Wheels Logo" />
 
-        <ul class="nav__links">
+        <button
+          class="nav__toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="main-navigation"
+          aria-label="Toggle navigation"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="nav__links" id="main-navigation">
           <li class="nav__item">
             <a class="nav__link" href="#hiw"> How it works</a>
           </li>
@@ -39,7 +51,13 @@
             <a class="nav__link" href="#pricing"> Pricing</a>
           </li>
           <li class="btn nav__item--btn">
-            <a class="nav__link" href="#6"> Groom now</a>
+            <a
+              class="nav__link open-modal-btn"
+              href="#"
+              data-modal-target="booking-modal"
+            >
+              Groom now</a
+            >
           </li>
         </ul>
       </nav>
@@ -50,7 +68,13 @@
         <h1>No need to stress</h1>
         <h4>we take care of the mess.</h4>
 
-        <button class="btn hero__btn">Groom now</button>
+        <button
+          class="btn hero__btn open-modal-btn"
+          type="button"
+          data-modal-target="booking-modal"
+        >
+          Groom now
+        </button>
       </div>
     </section>
 
@@ -93,26 +117,26 @@
       <div class="services">
         <div class="service">
           <div class="service__image-container">
-            <img src="/img/services/haircut.jpg" alt="dog-haircut" />
+            <img src="./img/services/haircut.jpg" alt="dog-haircut" />
           </div>
           <h5>Haircut</h5>
         </div>
         <div class="service">
           <div class="service__image-container">
-            <img src="/img/services/bath.jpg" alt="dog-bath" />
+            <img src="./img/services/bath.jpg" alt="dog-bath" />
           </div>
           <h5>Bath</h5>
         </div>
         <div class="service">
           <div class="service__image-container">
-            <img src="/img/services/toothbrush.jpg" alt="dog-brush" />
+            <img src="./img/services/toothbrush.jpg" alt="dog-brush" />
           </div>
 
           <h5>Brush</h5>
         </div>
         <div class="service">
           <div class="service__image-container">
-            <img src="/img/services/earclean.jpg" alt="dog-earclean" />
+            <img src="./img/services/earclean.jpg" alt="dog-earclean" />
           </div>
 
           <h5>Ear clean</h5>
@@ -198,7 +222,7 @@
             </blockquote>
             <address class="testimonial__author">
               <img
-                src="./img/services/bath.jpg"
+                src="./img/testimonial/user-2.jpg"
                 alt=""
                 class="testimonial__photo"
               />
@@ -224,7 +248,11 @@
               such good hands. I’m a loyal customer for life!
             </blockquote>
             <address class="testimonial__author">
-              <img src="" alt="" class="testimonial__photo" />
+              <img
+                src="./img/testimonial/user-1.jpg"
+                alt=""
+                class="testimonial__photo"
+              />
               <h6 class="testimonial__name">Sophie Taylor</h6>
               <h5 class="testimonial__location">Manchester, UK</h5>
             </address>
@@ -246,11 +274,11 @@
             </blockquote>
             <address class="testimonial__author">
               <img
-                src="./img/services/bath.jpg"
+                src="./img/testimonial/user-3.jpg"
                 alt=""
                 class="testimonial__photo"
               />
-              <h6 class="testimonial__name">Miyah Miles</h6>
+              <h6 class="testimonial__name">Louie Jones</h6>
               <h5 class="testimonial__location">London, UK</h5>
             </address>
           </div>
@@ -320,7 +348,13 @@
     <section class="section section__cte">
       <div class="cte">
         <h3>Give Your Dog the Grooming They Deserve!</h3>
-        <button class="btn hero__btn">Schedule Appointment</button>
+        <button
+          class="btn hero__btn open-modal-btn"
+          type="button"
+          data-modal-target="booking-modal"
+        >
+          Schedule Appointment
+        </button>
       </div>
     </section>
 
@@ -372,6 +406,69 @@
       <p class="footer_copyright">Copyright &copy; 2024 PawsOnWheels</p>
     </footer>
 
+    <div class="modal" id="booking-modal" aria-hidden="true">
+      <div class="modal__backdrop" data-close-modal="true"></div>
+      <div
+        class="modal__dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="booking-title"
+      >
+        <button
+          class="modal__close"
+          type="button"
+          aria-label="Close booking form"
+        >
+          ×
+        </button>
+
+        <form class="booking-form">
+          <div class="booking-form__row">
+            <label class="booking-form__field">
+              <span>FIRST NAME</span>
+              <input type="text" placeholder="Mark Anthony" />
+            </label>
+
+            <label class="booking-form__field">
+              <span>LAST NAME</span>
+              <input type="text" placeholder="Catalan" />
+            </label>
+          </div>
+
+          <label class="booking-form__field">
+            <span>EMAIL</span>
+            <input type="email" placeholder="yourname@company.com" />
+          </label>
+
+          <label class="booking-form__field">
+            <span>SERVICE NEEDED</span>
+            <div class="select-wrap">
+              <select>
+                <option selected>Select a service...</option>
+                <option>Bath & Brush</option>
+                <option>Haircut</option>
+                <option>Ear Clean</option>
+                <option>Full Grooming Package</option>
+                <option>Deluxe Grooming Package</option>
+              </select>
+            </div>
+          </label>
+
+          <label class="booking-form__field">
+            <span>TELL ME ABOUT YOUR PROJECT</span>
+            <textarea
+              rows="5"
+              placeholder="Give me a sense of your brand, what you need done, your budget range, and your timeline."
+            ></textarea>
+          </label>
+
+          <button class="btn booking-form__submit" type="submit">
+            Send message
+          </button>
+        </form>
+      </div>
+    </div>
+
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
@@ -380,5 +477,6 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
+    <script src="./script.js"></script>
   </body>
 </html>

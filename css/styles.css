@@ -14,12 +14,15 @@
 html {
   font-size: 62.5%;
   box-sizing: border-box;
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
 }
 
 body {
   font-family: "Poppins", sans-serif;
   font-weight: 300;
   color: #444;
+  overflow-x: hidden;
 
   line-height: 1.9;
 }
@@ -75,6 +78,43 @@ body {
   display: flex;
   align-items: center;
   column-gap: 5rem;
+}
+
+.nav__toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.45rem;
+  width: 4rem;
+  height: 4rem;
+  padding: 0.8rem;
+  border: 1px solid rgba(93, 61, 46, 0.2);
+  border-radius: 0.8rem;
+  background: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+}
+
+.nav__toggle span {
+  display: block;
+  width: 100%;
+  height: 0.2rem;
+  border-radius: 999px;
+  background: #444;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.nav__toggle--open span:nth-child(1) {
+  transform: translateY(0.65rem) rotate(45deg);
+}
+
+.nav__toggle--open span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav__toggle--open span:nth-child(3) {
+  transform: translateY(-0.65rem) rotate(-45deg);
 }
 
 .nav__item {
@@ -144,6 +184,131 @@ body {
 
   padding: 1.5rem 3rem;
   border-radius: 5rem;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal--open {
+  display: flex;
+}
+
+.modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(16, 16, 16, 0.3);
+}
+
+.modal__dialog {
+  position: relative;
+  z-index: 1;
+  width: min(90vw, 760px);
+  background: #f5f1ed;
+  border: 1px solid rgba(104, 86, 74, 0.25);
+  border-radius: 1.8rem;
+  box-shadow: 0 2rem 5rem rgba(37, 29, 23, 0.18);
+  padding: 3rem 3rem 2.5rem;
+}
+
+.modal__close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 3.2rem;
+  height: 3.2rem;
+  border: none;
+  background: transparent;
+  color: #5c4f47;
+  font-size: 3rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.booking-form {
+  display: grid;
+  gap: 2.2rem;
+}
+
+.booking-form__row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+.booking-form__field {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.booking-form__field span {
+  font-size: 1.2rem;
+  letter-spacing: 0.12rem;
+  font-weight: 600;
+  color: #574d46;
+}
+
+.booking-form__field input,
+.booking-form__field textarea,
+.booking-form__field select {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.35);
+  border: 1px solid rgba(102, 83, 73, 0.45);
+  border-radius: 1rem;
+  padding: 1.35rem 1.5rem;
+  color: #2e2b2a;
+  font-family: inherit;
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+.booking-form__field textarea {
+  min-height: 15rem;
+  resize: vertical;
+}
+
+.booking-form__field input::placeholder,
+.booking-form__field textarea::placeholder {
+  color: rgba(60, 52, 47, 0.65);
+}
+
+.select-wrap {
+  position: relative;
+}
+
+.select-wrap::after {
+  content: "▾";
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #3a3836;
+  font-size: 2rem;
+  pointer-events: none;
+}
+
+.booking-form__field select {
+  appearance: none;
+  cursor: pointer;
+}
+
+.booking-form__submit {
+  width: fit-content;
+  min-width: 18rem;
+  border-radius: 3rem;
+  font-size: 2rem;
+  padding: 1.6rem 2.8rem;
+  margin-top: 0.6rem;
+  background: #405b4d;
+}
+
+.booking-form__submit:hover {
+  background: #304d3f;
 }
 
 /* Services Section */
@@ -301,9 +466,17 @@ body {
   line-height: 1.7;
 }
 
+.wcu__section--img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .wcu__section--img img {
   width: 100%;
-  height: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
 }
 
 /* Testimonial Section */
@@ -327,16 +500,30 @@ body {
   height: 50rem;
   margin: 0 auto;
   position: relative;
+  padding-bottom: 4rem;
 }
 
 .slide {
   position: absolute;
-  top: 0;
-  width: 100%;
-  height: 50rem;
+  inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateX(4rem);
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease,
+    visibility 0.4s ease;
+}
+
+.slide--active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(0);
 }
 
 .testimonial {
@@ -408,6 +595,36 @@ body {
 .slider__btn--right {
   right: 0;
   transform: translate(50%, -50%);
+}
+
+.dots {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1rem;
+  z-index: 20;
+}
+
+.dot {
+  width: 1.2rem;
+  height: 1.2rem;
+  border: none;
+  border-radius: 50%;
+  background: rgba(68, 68, 68, 0.35);
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  appearance: none;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.dot--active {
+  background: var(--color-primary);
+  transform: scale(1.2);
 }
 
 /* Pricing section */
@@ -554,4 +771,214 @@ body {
   color: whitesmoke;
   text-align: center;
   font-size: 1.5rem;
+}
+
+@media (max-width: 1100px) {
+  .wcu__section--content {
+    grid-template-columns: 1fr;
+    width: 90%;
+  }
+
+  .wcu__section--details {
+    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+  }
+
+  .wcu__section--img {
+    width: min(100%, 50rem);
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 900px) {
+  .modal__dialog {
+    padding: 2.5rem 2rem 2rem;
+  }
+
+  .booking-form__row {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 7rem 3rem;
+  }
+
+  .nav {
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem 2rem;
+  }
+
+  .nav__toggle {
+    display: flex;
+  }
+
+  .nav__links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 1rem;
+    column-gap: 0;
+    text-align: center;
+    padding: 1.5rem 0;
+  }
+
+  .nav__links--open {
+    display: flex;
+  }
+
+  .nav__item {
+    width: 100%;
+  }
+
+  .nav__link:link,
+  .nav__link:visited {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero__section {
+    min-height: 50rem;
+    height: auto;
+    padding: 8rem 2rem;
+  }
+
+  .hero__description {
+    margin-left: 0;
+  }
+
+  .hero__section h1 {
+    font-size: 5rem;
+  }
+
+  .services {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 90%;
+  }
+
+  .hiw__steps {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .wcu__section--content {
+    grid-template-columns: 1fr;
+    width: 90%;
+  }
+
+  .wcu__section--details {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing {
+    grid-template-columns: 1fr;
+    width: 90%;
+  }
+
+  .slider {
+    height: 60rem;
+  }
+
+  .testimonial {
+    width: 90%;
+  }
+
+  .pricing__section h3,
+  .testimonial__section h3,
+  .services__section h3,
+  .wcu__section h3 {
+    width: 100%;
+    font-size: 3rem;
+  }
+
+  .cte {
+    flex-direction: column;
+    min-width: 0;
+    width: 90%;
+    row-gap: 2rem;
+  }
+
+  .footer__socials {
+    gap: 2rem;
+  }
+
+  .items {
+    flex-wrap: wrap;
+    gap: 2rem 3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding: 6rem 2rem;
+  }
+
+  .nav__links {
+    column-gap: 1.2rem;
+  }
+
+  .nav__link:link,
+  .nav__link:visited {
+    font-size: 1.4rem;
+  }
+
+  .hero__section h1 {
+    font-size: 4rem;
+  }
+
+  .hero__section h4 {
+    font-size: 2.6rem;
+  }
+
+  .hero__btn {
+    margin-top: 3rem;
+    font-size: 2rem;
+    padding: 1.2rem 2rem;
+  }
+
+  .services {
+    grid-template-columns: 1fr;
+  }
+
+  .service {
+    width: 100%;
+  }
+
+  .slider {
+    height: 68rem;
+  }
+
+  .slider__btn {
+    width: 4.5rem;
+    height: 4.5rem;
+    font-size: 2.5rem;
+  }
+
+  .testimonial__header {
+    font-size: 1.8rem;
+  }
+
+  .testimonial__text {
+    font-size: 1.4rem;
+  }
+
+  .package {
+    padding: 2.5rem 2rem;
+  }
+
+  .package__price {
+    width: 85%;
+    font-size: 4rem;
+  }
+
+  .cte h3 {
+    font-size: 2.8rem;
+  }
+
+  .footer__logo {
+    width: 18rem;
+  }
 }
